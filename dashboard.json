@@ -889,13 +889,13 @@
       "rank": 3,
       "player_name": "Sudarshan Yellamaraju",
       "season_earnings": 2554527.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 4,
       "player_name": "Austin Smotherman",
       "season_earnings": 1781167.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 5,
@@ -907,31 +907,31 @@
       "rank": 6,
       "player_name": "Jordan Smith",
       "season_earnings": 1493748.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 7,
       "player_name": "Taylor Moore",
       "season_earnings": 1283441.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 8,
       "player_name": "Mac Meissner",
       "season_earnings": 1249113.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 9,
       "player_name": "Johnny Keefer",
       "season_earnings": 1241041.0,
-      "wins": NaN
+      "wins": 0.0
     },
     {
       "rank": 10,
       "player_name": "Jackson Suber",
       "season_earnings": 1181025.0,
-      "wins": NaN
+      "wins": 0.0
     }
   ]
 }
