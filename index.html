@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kent's Golf Pool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { -webkit-overflow-scrolling: touch; }
+        .sticky-header { position: sticky; top: 0; z-index: 10; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased pb-12">
+
+    <!-- Header Banner -->
+    <header class="bg-emerald-800 text-white shadow-md border-b border-emerald-700 sticky-header">
+        <div class="px-4 py-3 flex justify-between items-center max-w-md mx-auto">
+            <div>
+                <h1 class="text-xl font-black tracking-tight">KENT'S GOLF POOL</h1>
+                <p id="last-updated" class="text-xs text-emerald-200 font-medium">Loading update time...</p>
+            </div>
+            <span class="bg-emerald-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">2026</span>
+        </div>
+    </header>
+
+    <!-- Main Mobile Container -->
+    <main class="max-w-md mx-auto px-3 mt-4 space-y-4">
+
+        <!-- Nav Tabs -->
+        <div class="flex bg-gray-800 p-1 rounded-xl shadow-inner text-sm font-semibold">
+            <button onclick="switchTab('leaderboard')" id="tab-leaderboard" class="w-1/2 py-2.5 rounded-lg bg-emerald-600 text-white text-center transition-all">Standings</button>
+            <button onclick="switchTab('prizes')" id="tab-prizes" class="w-1/2 py-2.5 rounded-lg text-gray-400 text-center transition-all">Prizes</button>
+        </div>
+
+        <!-- TAB 1: STANDINGS & SEARCH -->
+        <section id="content-leaderboard" class="space-y-4">
+            
+            <!-- Live Search Bar -->
+            <div class="relative">
+                <input type="text" id="player-search" oninput="handleSearch()" placeholder="Search for a player..." class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-gray-200 placeholder-gray-500 shadow-inner">
+                <div id="search-results" class="mt-2 space-y-2 hidden"></div>
+            </div>
+
+            <!-- Leaderboard List -->
+            <div id="standings-list" class="space-y-2">
+                <p class="text-center text-gray-400 py-8">Authenticating...</p>
+            </div>
+        </section>
+
+        <!-- TAB 2: PRIZES & TOURNAMENTS -->
+        <section id="content-prizes" class="hidden space-y-4">
+            <div class="bg-gray-800 rounded-2xl p-4 shadow-lg border border-gray-700">
+                <h2 class="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">Estimated Season End Payouts</h2>
+                <div id="payout-projections" class="space-y-2 text-sm"></div>
+            </div>
+            <div class="bg-gray-800 rounded-2xl p-4 shadow-lg border border-gray-700">
+                <h2 class="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">Key Tournament Winners</h2>
+                <div id="tournament-winners" class="space-y-3"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Client-Side JavaScript Logic -->
+    <script>
+        let poolData = null;
+        
+        // --- SECURITY ---
+        const POOL_PASSWORD = "KentPool2026!"; 
+
+        const formatMoney = (num) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
+
+        function checkAuth() {
+            if (localStorage.getItem('golf_pool_authenticated') === 'true') {
+                loadDashboardData();
+                return;
+            }
+            const passwordInput = prompt("Enter the password to view Kent's Golf Pool:");
+            if (passwordInput === POOL_PASSWORD) {
+                localStorage.setItem('golf_pool_authenticated', 'true');
+                loadDashboardData();
+            } else {
+                alert("Incorrect password. Access denied.");
+                document.getElementById('standings-list').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-red-400 mb-4 font-semibold">Unauthorized Access.</p>
+                        <button onclick="checkAuth()" class="bg-gray-700 text-white px-4 py-2 rounded shadow">Try Again</button>
+                    </div>`;
+            }
+        }
+
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('dashboard.json');
+                if (!response.ok) throw new Error("JSON file not found.");
+                poolData = await response.json();
+                renderAll();
+            } catch (error) {
+                console.error("Error loading dashboard data:", error);
+                document.getElementById('standings-list').innerHTML = `<p class="text-center text-red-400 py-8">Failed to load data. Ensure dashboard.json is uploaded.</p>`;
+            }
+        }
+
+        function switchTab(tabId) {
+            ['leaderboard', 'prizes'].forEach(t => {
+                document.getElementById(`content-${t}`).classList.add('hidden');
+                document.getElementById(`tab-${t}`).classList.remove('bg-emerald-600', 'text-white');
+                document.getElementById(`tab-${t}`).classList.add('text-gray-400');
+            });
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            document.getElementById(`tab-${tabId}`).classList.add('bg-emerald-600', 'text-white');
+            document.getElementById(`tab-${tabId}`).classList.remove('text-gray-400');
+        }
+
+        function toggleRoster(id) {
+            const el = document.getElementById(`roster-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // --- SEARCH LOGIC ---
+        function handleSearch() {
+            const query = document.getElementById('player-search').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('search-results');
+            
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                return;
+            }
+            
+            let rosterMatches = [];
+            
+            // Search through real participant rosters
+            poolData.leaderboard.forEach(team => {
+                if (team.is_ghost) return;
+                team.roster.forEach(player => {
+                    if (player.player_name.toLowerCase().includes(query)) {
+                        rosterMatches.push({ player: player.player_name, owner: team.participant_name });
+                    }
+                });
+            });
+            
+            // Output results dynamically
+            if (rosterMatches.length > 0) {
+                resultsContainer.innerHTML = rosterMatches.map(m => `
+                    <div class="bg-gray-800 px-3 py-2 rounded-lg text-sm border border-emerald-700/50 flex justify-between items-center shadow-lg">
+                        <span class="text-gray-200 font-medium">${m.player}</span>
+                        <span class="text-emerald-400 font-bold">${m.owner}</span>
+                    </div>
+                `).join('');
+            } else {
+                resultsContainer.innerHTML = `
+                    <div class="bg-gray-800 px-3 py-2 rounded-lg text-sm border border-gray-700 flex justify-between items-center shadow text-gray-400">
+                        <span class="italic">Searched "${query}"</span>
+                        <span class="text-white font-bold uppercase text-[10px] tracking-wider px-2 py-1 bg-gray-700 rounded">Not Selected</span>
+                    </div>
+                `;
+            }
+            resultsContainer.classList.remove('hidden');
+        }
+
+        function renderAll() {
+            if (!poolData) return;
+
+            const updatedDate = new Date(poolData.meta.last_updated);
+            document.getElementById('last-updated').innerText = `Updated: ${updatedDate.toLocaleDateString()} ${updatedDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+
+            // Render Standings (Ghost Team is now seamlessly integrated)
+            let standingsHTML = '';
+            poolData.leaderboard.forEach((user, index) => {
+                // Style Ghost Team differently to make it distinct
+                const nameStyle = user.is_ghost ? 'text-gray-400 italic' : 'text-gray-100';
+                const bgStyle = user.is_ghost ? 'bg-gray-800/60 border-dashed' : 'bg-gray-800';
+
+                standingsHTML += `
+                    <div class="${bgStyle} rounded-2xl shadow-md border border-gray-700/60 overflow-hidden">
+                        <div onclick="toggleRoster(${index})" class="flex items-center justify-between p-4 active:bg-gray-700/40 cursor-pointer transition-colors">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-sm font-black text-gray-500 w-5 text-center">${user.current_rank}</span>
+                                <span class="font-bold ${nameStyle} tracking-tight">${user.participant_name}</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="font-mono font-bold text-emerald-400 text-sm">${formatMoney(user.total_team_earnings)}</span>
+                                <svg id="icon-${index}" class="w-4 h-4 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                        <div id="roster-${index}" class="hidden bg-gray-950/40 border-t border-gray-700/50 divide-y divide-gray-800/40 px-4 py-2">
+                            ${user.roster.map(player => `
+                                <div class="flex justify-between items-center py-2 text-xs">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-[10px] bg-gray-800 text-gray-400 font-mono w-4 h-4 flex items-center justify-center rounded">${player.pick_position}</span>
+                                        <span class="text-gray-300 font-medium">${player.player_name} ${player.wins > 0 ? `🏆`.repeat(player.wins) : ''}</span>
+                                    </div>
+                                    <span class="font-mono text-gray-400">${formatMoney(player.season_earnings)}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>`;
+            });
+            document.getElementById('standings-list').innerHTML = standingsHTML;
+
+            // Render Prizes
+            const prizes = poolData.special_prizes.pool_split_projections;
+            const blp = poolData.special_prizes.best_last_pick;
+            document.getElementById('payout-projections').innerHTML = `
+                <div class="flex justify-between border-b border-gray-700/50 pb-2"><span>1st Place (55%)</span><span class="font-mono font-bold text-emerald-400">${formatMoney(prizes.first_place_55_pct)}</span></div>
+                <div class="flex justify-between border-b border-gray-700/50 pb-2 py-1"><span>2nd Place (30%)</span><span class="font-mono font-bold text-emerald-400">${formatMoney(prizes.second_place_30_pct)}</span></div>
+                <div class="flex justify-between border-b border-gray-700/50 pb-2 py-1"><span>3rd Place (15%)</span><span class="font-mono font-bold text-emerald-400">${formatMoney(prizes.third_place_15_pct)}</span></div>
+                <div class="flex justify-between border-b border-gray-700/50 pb-2 py-1"><span>4th Place (Flat)</span><span class="font-mono font-bold text-emerald-400">${formatMoney(prizes.fourth_place_flat)}</span></div>
+                <div class="flex justify-between pt-1 text-gray-300">
+                    <div><span>Best Last Pick (Flat)</span><p class="text-[11px] text-gray-400">Leader: ${blp.current_leader_participant} (${blp.player_name})</p></div>
+                    <span class="font-mono font-bold text-emerald-400">${formatMoney(50)}</span>
+                </div>`;
+
+            let tourneyHTML = '';
+            poolData.key_tournaments.forEach(t => {
+                const completed = t.winning_participant ? true : false;
+                tourneyHTML += `
+                    <div class="flex justify-between items-start text-xs border-b border-gray-700/50 pb-2 last:border-0 last:pb-0">
+                        <div>
+                            <p class="font-bold text-gray-200">${t.tournament_name}</p>
+                            <p class="text-[10px] ${completed ? 'text-emerald-400' : 'text-gray-400'}">
+                                ${completed ? `Picked by ${t.winning_participant} (${t.winning_player})` : 'In Progress / Open'}
+                            </p>
+                        </div>
+                        <span class="font-mono font-semibold bg-gray-900 px-2 py-0.5 rounded text-gray-300">$${parseFloat(t.prize_payout)}</span>
+                    </div>`;
+            });
+            document.getElementById('tournament-winners').innerHTML = tourneyHTML;
+        }
+
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>
+
