@@ -500,31 +500,31 @@
           "pick_position": 3,
           "player_name": "Sudarshan Yellamaraju",
           "season_earnings": 2581759.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 4,
           "player_name": "Austin Smotherman",
           "season_earnings": 1801055.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 5,
           "player_name": "Johnny Keefer",
           "season_earnings": 1672929.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 6,
           "player_name": "Mac Meissner",
           "season_earnings": 1611476.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 7,
           "player_name": "Jordan Smith",
           "season_earnings": 1591398.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 8,
@@ -536,13 +536,13 @@
           "pick_position": 9,
           "player_name": "Jackson Suber",
           "season_earnings": 1478025.0,
-          "wins": NaN
+          "wins": 0.0
         },
         {
           "pick_position": 10,
           "player_name": "Taylor Moore",
           "season_earnings": 1283441.0,
-          "wins": NaN
+          "wins": 0.0
         }
       ],
       "current_rank": ""
