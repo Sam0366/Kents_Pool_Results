@@ -1,12 +1,12 @@
 {
   "meta": {
-    "last_updated": "2026-08-03T14:09:50.664350+00:00"
+    "last_updated": "2026-08-12T10:50:31.249994+00:00"
   },
   "leaderboard": [
     {
       "participant_name": "Mark D",
       "is_ghost": false,
-      "total_team_earnings": 46487307.0,
+      "total_team_earnings": 48055455.0,
       "roster": [
         {
           "pick_position": 1,
@@ -41,14 +41,14 @@
         {
           "pick_position": 6,
           "player_name": "Rasmus Hojgaard",
-          "season_earnings": 1168546.0,
+          "season_earnings": 1189949.0,
           "wins": 0
         },
         {
           "pick_position": 7,
           "player_name": "Michael Brennan",
-          "season_earnings": 1218668.0,
-          "wins": 0
+          "season_earnings": 2748668.0,
+          "wins": 1
         },
         {
           "pick_position": 8,
@@ -59,7 +59,7 @@
         {
           "pick_position": 9,
           "player_name": "Lee Hodges",
-          "season_earnings": 1155900.0,
+          "season_earnings": 1172645.0,
           "wins": 0
         },
         {
@@ -74,7 +74,7 @@
     {
       "participant_name": "Dean",
       "is_ghost": false,
-      "total_team_earnings": 44795630.0,
+      "total_team_earnings": 44862742.0,
       "roster": [
         {
           "pick_position": 1,
@@ -97,7 +97,7 @@
         {
           "pick_position": 4,
           "player_name": "Max Greyserman",
-          "season_earnings": 1459844.0,
+          "season_earnings": 1475909.0,
           "wins": 0
         },
         {
@@ -127,7 +127,7 @@
         {
           "pick_position": 9,
           "player_name": "Denny McCarthy",
-          "season_earnings": 1601324.0,
+          "season_earnings": 1652371.0,
           "wins": 0
         },
         {
@@ -142,7 +142,7 @@
     {
       "participant_name": "Mark B",
       "is_ghost": false,
-      "total_team_earnings": 36946860.0,
+      "total_team_earnings": 37514631.0,
       "roster": [
         {
           "pick_position": 1,
@@ -153,25 +153,25 @@
         {
           "pick_position": 2,
           "player_name": "Cameron Young",
-          "season_earnings": 14197952.0,
+          "season_earnings": 14216482.0,
           "wins": 2
         },
         {
           "pick_position": 3,
           "player_name": "Sungjae Im",
-          "season_earnings": 2283452.0,
+          "season_earnings": 2430077.0,
           "wins": 0
         },
         {
           "pick_position": 4,
           "player_name": "Tom Hoge",
-          "season_earnings": 1727861.0,
+          "season_earnings": 1778908.0,
           "wins": 0
         },
         {
           "pick_position": 5,
           "player_name": "Mackenzie Hughes",
-          "season_earnings": 796630.0,
+          "season_earnings": 847677.0,
           "wins": 0
         },
         {
@@ -189,7 +189,7 @@
         {
           "pick_position": 8,
           "player_name": "Eric Cole",
-          "season_earnings": 2773707.0,
+          "season_earnings": 2824754.0,
           "wins": 0
         },
         {
@@ -201,7 +201,7 @@
         {
           "pick_position": 10,
           "player_name": "Matt Wallace",
-          "season_earnings": 1681249.0,
+          "season_earnings": 1930724.0,
           "wins": 0
         }
       ],
@@ -210,7 +210,7 @@
     {
       "participant_name": "Mike J",
       "is_ghost": false,
-      "total_team_earnings": 32872225.0,
+      "total_team_earnings": 32940018.0,
       "roster": [
         {
           "pick_position": 1,
@@ -245,7 +245,7 @@
         {
           "pick_position": 6,
           "player_name": "Matt McCarty",
-          "season_earnings": 2950733.0,
+          "season_earnings": 3001781.0,
           "wins": 0
         },
         {
@@ -257,7 +257,7 @@
         {
           "pick_position": 8,
           "player_name": "Matti Schmid",
-          "season_earnings": 1716889.0,
+          "season_earnings": 1733634.0,
           "wins": 0
         },
         {
@@ -278,7 +278,7 @@
     {
       "participant_name": "Brad",
       "is_ghost": false,
-      "total_team_earnings": 30424169.0,
+      "total_team_earnings": 31296014.0,
       "roster": [
         {
           "pick_position": 1,
@@ -295,7 +295,7 @@
         {
           "pick_position": 3,
           "player_name": "Hideki Matsuyama",
-          "season_earnings": 4694982.0,
+          "season_earnings": 4944457.0,
           "wins": 0
         },
         {
@@ -313,7 +313,7 @@
         {
           "pick_position": 6,
           "player_name": "Chris Kirk",
-          "season_earnings": 793820.0,
+          "season_earnings": 810565.0,
           "wins": 0
         },
         {
@@ -325,13 +325,13 @@
         {
           "pick_position": 8,
           "player_name": "Nico Echavarria",
-          "season_earnings": 3210482.0,
+          "season_earnings": 3399607.0,
           "wins": 1
         },
         {
           "pick_position": 9,
           "player_name": "Kevin Yu",
-          "season_earnings": 903253.0,
+          "season_earnings": 1319753.0,
           "wins": 0
         },
         {
@@ -346,7 +346,7 @@
     {
       "participant_name": "Frank",
       "is_ghost": false,
-      "total_team_earnings": 28394876.0,
+      "total_team_earnings": 28994339.0,
       "roster": [
         {
           "pick_position": 1,
@@ -375,7 +375,7 @@
         {
           "pick_position": 5,
           "player_name": "Michael Kim",
-          "season_earnings": 2467984.0,
+          "season_earnings": 2487619.0,
           "wins": 0
         },
         {
@@ -387,25 +387,25 @@
         {
           "pick_position": 7,
           "player_name": "Davis Thompson",
-          "season_earnings": 1396163.0,
+          "season_earnings": 1542788.0,
           "wins": 0
         },
         {
           "pick_position": 8,
           "player_name": "Joe Highsmith",
-          "season_earnings": 500085.0,
+          "season_earnings": 516150.0,
           "wins": 0
         },
         {
           "pick_position": 9,
           "player_name": "Tom Kim",
-          "season_earnings": 3966826.0,
+          "season_earnings": 4295139.0,
           "wins": 1
         },
         {
           "pick_position": 10,
           "player_name": "Chandler Phillips",
-          "season_earnings": 1303713.0,
+          "season_earnings": 1392538.0,
           "wins": 0
         }
       ],
@@ -414,12 +414,12 @@
     {
       "participant_name": "Jason",
       "is_ghost": false,
-      "total_team_earnings": 28126776.0,
+      "total_team_earnings": 28529914.0,
       "roster": [
         {
           "pick_position": 1,
           "player_name": "Keegan Bradley",
-          "season_earnings": 2204144.0,
+          "season_earnings": 2225547.0,
           "wins": 0
         },
         {
@@ -437,7 +437,7 @@
         {
           "pick_position": 4,
           "player_name": "Jordan Spieth",
-          "season_earnings": 2787549.0,
+          "season_earnings": 2900174.0,
           "wins": 0
         },
         {
@@ -449,7 +449,7 @@
         {
           "pick_position": 6,
           "player_name": "Alex Smalley",
-          "season_earnings": 4707433.0,
+          "season_earnings": 4956908.0,
           "wins": 0
         },
         {
@@ -461,7 +461,7 @@
         {
           "pick_position": 8,
           "player_name": "Andrew Putnam",
-          "season_earnings": 1939369.0,
+          "season_earnings": 1959004.0,
           "wins": 0
         },
         {
@@ -482,7 +482,7 @@
     {
       "participant_name": "Ken",
       "is_ghost": false,
-      "total_team_earnings": 26018323.0,
+      "total_team_earnings": 26056471.0,
       "roster": [
         {
           "pick_position": 1,
@@ -493,7 +493,7 @@
         {
           "pick_position": 2,
           "player_name": "Nick Taylor",
-          "season_earnings": 2329915.0,
+          "season_earnings": 2346660.0,
           "wins": 0
         },
         {
@@ -541,7 +541,7 @@
         {
           "pick_position": 10,
           "player_name": "Patrick Fishburn",
-          "season_earnings": 408585.0,
+          "season_earnings": 429988.0,
           "wins": 0
         }
       ],
@@ -550,7 +550,7 @@
     {
       "participant_name": "Ghost Team",
       "is_ghost": true,
-      "total_team_earnings": 25461907.0,
+      "total_team_earnings": 25805933.0,
       "roster": [
         {
           "pick_position": 1,
@@ -561,7 +561,7 @@
         {
           "pick_position": 2,
           "player_name": "Alex Fitzpatrick",
-          "season_earnings": 4528684.0,
+          "season_earnings": 4547214.0,
           "wins": 1.0
         },
         {
@@ -572,44 +572,44 @@
         },
         {
           "pick_position": 4,
-          "player_name": "Austin Smotherman",
-          "season_earnings": 1871141.0,
+          "player_name": "Jordan Smith",
+          "season_earnings": 1996332.0,
           "wins": 0
         },
         {
           "pick_position": 5,
-          "player_name": "Jordan Smith",
-          "season_earnings": 1849707.0,
+          "player_name": "Austin Smotherman",
+          "season_earnings": 1888736.0,
           "wins": 0
         },
         {
           "pick_position": 6,
+          "player_name": "Jackson Koivun",
+          "season_earnings": 1785262.0,
+          "wins": 1.0
+        },
+        {
+          "pick_position": 7,
           "player_name": "Johnny Keefer",
           "season_earnings": 1738454.0,
           "wins": 0
         },
         {
-          "pick_position": 7,
-          "player_name": "Jackson Koivun",
-          "season_earnings": 1734214.0,
-          "wins": 1.0
-        },
-        {
           "pick_position": 8,
-          "player_name": "Mac Meissner",
-          "season_earnings": 1685976.0,
-          "wins": 0
+          "player_name": "Ricky Castillo",
+          "season_earnings": 1705334.0,
+          "wins": 1.0
         },
         {
           "pick_position": 9,
-          "player_name": "Ricky Castillo",
-          "season_earnings": 1683931.0,
-          "wins": 1.0
+          "player_name": "Jackson Suber",
+          "season_earnings": 1693527.0,
+          "wins": 0
         },
         {
           "pick_position": 10,
-          "player_name": "Jackson Suber",
-          "season_earnings": 1604702.0,
+          "player_name": "Mac Meissner",
+          "season_earnings": 1685976.0,
           "wins": 0
         }
       ],
@@ -618,7 +618,7 @@
     {
       "participant_name": "Mike M",
       "is_ghost": false,
-      "total_team_earnings": 23429830.0,
+      "total_team_earnings": 24542093.0,
       "roster": [
         {
           "pick_position": 1,
@@ -641,43 +641,43 @@
         {
           "pick_position": 4,
           "player_name": "Austin Eckroat",
-          "season_earnings": 812177.0,
+          "season_earnings": 844083.0,
           "wins": 0
         },
         {
           "pick_position": 5,
           "player_name": "Aaron Rai",
-          "season_earnings": 5001155.0,
+          "season_earnings": 5052202.0,
           "wins": 1
         },
         {
           "pick_position": 6,
           "player_name": "Christiaan Bezuidenhout",
-          "season_earnings": 1076188.0,
+          "season_earnings": 1108094.0,
           "wins": 0
         },
         {
           "pick_position": 7,
           "player_name": "Keith Mitchell",
-          "season_earnings": 2741341.0,
+          "season_earnings": 2773247.0,
           "wins": 0
         },
         {
           "pick_position": 8,
           "player_name": "Erik van Rooyen",
-          "season_earnings": 399212.0,
+          "season_earnings": 416807.0,
           "wins": 0
         },
         {
           "pick_position": 9,
           "player_name": "Sahith Theegala",
-          "season_earnings": 3119845.0,
+          "season_earnings": 3141248.0,
           "wins": 0
         },
         {
           "pick_position": 10,
           "player_name": "Beau Hossler",
-          "season_earnings": 621796.0,
+          "season_earnings": 1548296.0,
           "wins": 0
         }
       ],
@@ -686,12 +686,12 @@
     {
       "participant_name": "Kent",
       "is_ghost": false,
-      "total_team_earnings": 23351248.0,
+      "total_team_earnings": 24127202.0,
       "roster": [
         {
           "pick_position": 1,
           "player_name": "Justin Thomas",
-          "season_earnings": 3455269.0,
+          "season_earnings": 3601894.0,
           "wins": 0
         },
         {
@@ -709,13 +709,13 @@
         {
           "pick_position": 4,
           "player_name": "Harry Hall",
-          "season_earnings": 2144445.0,
+          "season_earnings": 2472758.0,
           "wins": 0
         },
         {
           "pick_position": 5,
           "player_name": "Bud Cauley",
-          "season_earnings": 4105742.0,
+          "season_earnings": 4125377.0,
           "wins": 1
         },
         {
@@ -739,13 +739,13 @@
         {
           "pick_position": 9,
           "player_name": "Alex Noren",
-          "season_earnings": 2759740.0,
+          "season_earnings": 3009215.0,
           "wins": 0
         },
         {
           "pick_position": 10,
           "player_name": "Marco Penge",
-          "season_earnings": 1137768.0,
+          "season_earnings": 1169674.0,
           "wins": 0
         }
       ],
@@ -754,7 +754,7 @@
     {
       "participant_name": "Scott",
       "is_ghost": false,
-      "total_team_earnings": 22512078.0,
+      "total_team_earnings": 22865890.0,
       "roster": [
         {
           "pick_position": 1,
@@ -765,7 +765,7 @@
         {
           "pick_position": 2,
           "player_name": "Andrew Novak",
-          "season_earnings": 1528470.0,
+          "season_earnings": 1777945.0,
           "wins": 0
         },
         {
@@ -777,13 +777,13 @@
         {
           "pick_position": 4,
           "player_name": "Tony Finau",
-          "season_earnings": 1603380.0,
+          "season_earnings": 1621910.0,
           "wins": 0
         },
         {
           "pick_position": 5,
           "player_name": "Brooks Koepka",
-          "season_earnings": 1640972.0,
+          "season_earnings": 1658567.0,
           "wins": 0
         },
         {
@@ -795,7 +795,7 @@
         {
           "pick_position": 7,
           "player_name": "Rico Hoey",
-          "season_earnings": 881107.0,
+          "season_earnings": 949319.0,
           "wins": 0
         },
         {
@@ -822,7 +822,7 @@
     {
       "participant_name": "Bob",
       "is_ghost": false,
-      "total_team_earnings": 19647186.0,
+      "total_team_earnings": 19968335.0,
       "roster": [
         {
           "pick_position": 1,
@@ -833,13 +833,13 @@
         {
           "pick_position": 2,
           "player_name": "Maverick McNealy",
-          "season_earnings": 2995765.0,
+          "season_earnings": 3063977.0,
           "wins": 0
         },
         {
           "pick_position": 3,
           "player_name": "Taylor Pendrith",
-          "season_earnings": 1488773.0,
+          "season_earnings": 1520679.0,
           "wins": 0
         },
         {
@@ -869,13 +869,13 @@
         {
           "pick_position": 8,
           "player_name": "Billy Horschel",
-          "season_earnings": 1173419.0,
+          "season_earnings": 1362544.0,
           "wins": 0
         },
         {
           "pick_position": 9,
           "player_name": "Joel Dahmen",
-          "season_earnings": 813694.0,
+          "season_earnings": 845600.0,
           "wins": 0
         },
         {
